@@ -1,6 +1,10 @@
 const readline = require("readline-sync");
 const Names = require('./Names.js');
+const Syms = require('./Syms.js');
 const c = require('chalk');
+
+const random = item => item[Math.floor(Math.random()* item.length)]
+
 
 class Human{
     constructor(name, sym, attributes) {
@@ -17,13 +21,15 @@ class Human{
     }
     static randomCreate(int){
         let humans = [];
+
         for(let i = 0; i <= int; i++){
-            console.log(Names[i])
+            humans.push(new Human(random(Names),random(Syms)))
         }
-        return;
+        return humans
     }
 
 }
+
 
 let hu = new Human('Jon', {mood:'sad', willToLive:0, strength: null, int:'minimal' })
 // console.log(hu.getMove())
@@ -34,7 +40,7 @@ testMap.forEach((row, i) => {
 console.log(c.green.bgGreen(['.',',',','], c.white.bgWhite(' ,') + '!'));
 // console.log(c.green.bgGreen.bold())
 // Human.randomCreate(20)
-
+console.log(Human.randomCreate(5))
 module.exports = Human;
 // '🧟'
 // '🧝'
