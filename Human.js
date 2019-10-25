@@ -53,25 +53,39 @@ let arr = map(10)
 // arr.forEach(row => console.log(c.green.bgGreen.bold(row.join(' '))))
 let [row, col] = [0,0]
 let move;
+// c.green.bgGreen.bold(row.join(' '))
+
 while(true){
-    arr.forEach(row => console.log(c.green.bgGreen.bold(row.join(' '))))
+    arr.forEach(row => console.log(row.join('🌱')))
+    console.log(row,col)
    move = readline.keyIn('Left or Right? ', {limit: 'wasdc'})
+    
    if(move==='w'){ 
-        arr[row][col]=' '
-       row--
-    arr[row][col] = '😬' }
-   else if(move ==='a'){
-       arr[row][col]=' '
-        col--
-        arr[row][col] = '😬'}
-   else if(move === 's'){
-        arr[row][col]=' '
-        row++
-        arr[row][col] = '😬'}
-   else if(move === 'd'){
-        arr[row][col]=' '
-        col++
-        arr[row][col] = '😬'}
+     if(row - 1 >= 0){
+            arr[row][col]=' '
+            row--
+            arr[row][col] = '😬' 
+     } 
+    }else if(move ==='a'){
+       if(col - 1 >= 0){
+            arr[row][col]=' '
+            col--
+            arr[row][col] = '😬'
+       }    
+    }else if(move === 's'){
+        if(row + 1 < arr.length){
+            arr[row][col]=' '
+            row++
+            arr[row][col] = '😬'
+        }
+    }else if(move === 'd'){
+        if(col + 1 < arr.length){
+            arr[row][col]=' '
+            col++
+            arr[row][col] = '😬'
+        }
+    }
+        
    console.clear()
 }
 
