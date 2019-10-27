@@ -10,7 +10,7 @@ const random = item => item[Math.floor(Math.random()* item.length)]
 // '🍒'
 
 
-for( )
+
 
 
 class Human{
@@ -36,6 +36,8 @@ class Human{
     }
 
 }
+
+
 
 
 let hu = new Human('Jon', {mood:'sad', willToLive:0, strength: null, int:'minimal' })
