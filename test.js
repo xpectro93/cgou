@@ -37,63 +37,42 @@
 // },1750)
     
 
-// const readline = require('readline');
+const readline = require('readline');
 
-// readline.emitKeypressEvents(process.stdin);
+readline.emitKeypressEvents(process.stdin);
 
-// process.stdin.setRawMode(true);
-// let count = 0;
+process.stdin.setRawMode(true);
+// require('events').EventEmitter.prototype._maxListeners = 100;
+let count = 0;
 
-// setInterval(() => {
-//     console.log(count)
-//     process.stdin.on('keypress', (str, key) => {
-//         if (key.ctrl && key.name === 'c') {
-//           process.exit();
-//         } else {
-//           console.log(`You pressed the "${str}" key`);
-//           console.log();
-//           count++
-          
-//           // console.log(key);
-//           console.log();
-//         }
-//       }); 
-   
-// }, 1000);
-
-// console.log('Press any key...');
-const random = (min, max) => Math.floor(Math.random() * (max - min + 1) ) + min
-let alive = true;
-let bulletSpot = random(1,6)
-let turn =  random(1,6)
-
-let player1 = 'Test';
-let player2 = 'Jon';
-
-while(alive){
-
-    console.log(bulletSpot, turn);
-    if(bulletSpot === turn){
-        console.log(`${player1}'s brain covers the room..`);
-        console.log(`${player2} wins!`);
-
-        break     
-    }else{
-        console.log(`Its ${player2}'s turn to try their luck`)
-        turn + 1 > 6 ? turn = 1 : turn++
-
-        console.log(bulletSpot, turn);
-        if(turn === bulletSpot){
-            console.log(`${player2}'s brain spills out of their head..`)
-            console.log(`${player1} wins!`);
-
-            break;
-        }else{
-            turn + 1 > 6 ? turn = 1 : turn++
-            console.log(`${player1} takes the gun and points it at their head..`)
+console.log(count)
+setInterval(() => {
+    //setting the amount of listeners to a high amount, this might cause problems later, but F it.yolo, right? kappa123
+    require('events').EventEmitter.defaultMaxListeners = 10000
+    process.stdin.on('keypress', (str, key) => {
+        if (key.ctrl && key.name === 'c') {
+            process.exit();
+        } else {
+            console.log(`You pressed the "${str}" key`);
+            count++
+          console.log(key);
+            
         }
-    }
-}
+        console.log(count);
+    }); 
+    console.log(`${count}`)
+}, 1000);
+    
+
+console.log('Press any key...');
+
+
+    
+      
+      
+
+
+
 
 
 
