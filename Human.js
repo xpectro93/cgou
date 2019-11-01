@@ -18,9 +18,11 @@ class Human {
     getMove() {
         return readline.question(`${this.name}, what's your next move?`);
     }
+
     greet(someone = "stranger") {
         return `Hello ${someone}, my name is ${this.name}.`;
     }
+    
     static randomCreate(int) {
         let humans = [];
 
@@ -75,7 +77,7 @@ const map = num => {
     }
     return grid;
 };
-let arr = map(28);
+let arr = map(15);
 let score = scoreBoard(29);
 
 
@@ -92,7 +94,7 @@ while(true){
     ////////render
     //scoreBoard test;
     // score.forEach(row => console.log(c.bgBlack.bold(row.join(" "))));
-    console.log(c.bgCyan.bold(row, col))
+    console.log(c.bgCyan.bold('HIGHSCORE: ',row, col))
     arr.forEach(row => console.log(c.bgBlack.bold(row.join(" "))));
     //input move 
     move = readline.keyIn('[w]up,[a]left, [s]down, [d]right', {limit: 'wasd'})
