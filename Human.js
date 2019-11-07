@@ -33,18 +33,6 @@ class Human {
   }
 }
 
-let hu = new Human ('Jon', {
-  mood: 'sad',
-  willToLive: 0,
-  strength: null,
-  int: 'minimal',
-});
-// console.log(hu.getMove())
-// let testMap = [['  ','  ','🌱',' '],['  ','  ','🌱',' '],['  ','  ','🌱',' ']];
-// testMap.forEach((row, i) => {
-//     console.log(c.green.bgGreen.bold(row.join(' ')))
-// })
-// console.log(c.green.bgGreen(['.',',',','], c.white.bgWhite(' ,') + '!'));
 const scoreBoard = num => {
   let grid = [];
   for (let i = 0; i < 4; i++) {
@@ -55,6 +43,7 @@ const scoreBoard = num => {
   }
   return grid;
 };
+
 const map = num => {
   let grid = [];
   for (let j = 0; j <= num; j++) {
@@ -75,7 +64,7 @@ const map = num => {
   }
   return grid;
 };
-let arr = map (15);
+let arr = map (28);
 let score = scoreBoard (29);
 
 // arr.forEach(row => console.log(c.green.bgGreen.bold(row.join(" "))));
@@ -166,3 +155,8 @@ while (true) {
 module.exports = Human;
 // '🧟'
 // '🧝'
+
+
+
+// Grid notes;
+// 14 is mid point, maybe by starting at [-14, 0]

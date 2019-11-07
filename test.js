@@ -45,7 +45,7 @@ process.stdin.setRawMode(true);
 // require('events').EventEmitter.prototype._maxListeners = 100;
 let count = 0;
 
-console.log(count)
+//So the plan is to 'render' normally while this function listens to te keypresses.
 setInterval(() => {
     //setting the amount of listeners to a high amount, this might cause problems later, but F it.yolo, right? kappa123
     require('events').EventEmitter.defaultMaxListeners = 10000
