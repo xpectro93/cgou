@@ -8,6 +8,7 @@ const random = item => item[Math.floor (Math.random () * item.length)];
 // '🔸'
 // '⚪'
 // '🍒'
+//
 
 class Human {
   constructor (name, sym, attributes) {
