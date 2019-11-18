@@ -47,19 +47,19 @@ const scoreBoard = num => {
 
 const map = num => {
   let grid = [];
-  for (let j = 0; j <= num; j++) {
+  for (let j = 0; j <= num + 3; j++) {
     grid.push ([]);
     for (let i = 0; i <= num; i++) {
       if (j === 0) {
         grid[j].push ('🔷');
-      } else if (j === num) {
+      } else if (j === num + 3) {
         grid[j].push ('🔷');
       } else if (i === 0) {
         grid[j][i] = '🔷';
       } else if (i === num) {
         grid[j][i] = '🔷';
       } else {
-        grid[j][i] = ' ';
+        grid[j][i] = '⚆';
       }
     }
   }
@@ -349,6 +349,152 @@ const fillTiles = array => {
   array[19][25] = '🔷'
   array[19][26] = '🔷'
   array[19][27] = '🔷'
+  //line 20
+  array[20][13] = '🔷'
+  array[20][14] = '🔷'
+  //line 21
+  array[21][2] = '🔷'
+  array[21][3] = '🔷'
+  array[21][4] = '🔷'
+  array[21][5] = '🔷'
+  array[21][7] = '🔷'
+  array[21][8] = '🔷'
+  array[21][9] = '🔷'
+  array[21][10] = '🔷'
+  array[21][11] = '🔷'
+  array[21][13] = '🔷'
+  array[21][14] = '🔷'
+  array[21][16] = '🔷'
+  array[21][17] = '🔷'
+  array[21][18] = '🔷'
+  array[21][19] = '🔷'
+  array[21][20] = '🔷'
+  array[21][22] = '🔷'
+  array[21][23] = '🔷'
+  array[21][24] = '🔷'
+  array[21][25] = '🔷'
+  //line 22
+  array[22][2] = '🔷'
+  array[22][3] = '🔷'
+  array[22][4] = '🔷'
+  array[22][5] = '🔷'
+  array[22][7] = '🔷'
+  array[22][8] = '🔷'
+  array[22][9] = '🔷'
+  array[22][10] = '🔷'
+  array[22][11] = '🔷'
+  array[22][13] = '🔷'
+  array[22][14] = '🔷'
+  array[22][16] = '🔷'
+  array[22][17] = '🔷'
+  array[22][18] = '🔷'
+  array[22][19] = '🔷'
+  array[22][20] = '🔷'
+  array[22][22] = '🔷'
+  array[22][23] = '🔷'
+  array[22][24] = '🔷'
+  array[22][25] = '🔷'
+  //line 23
+  array[23][4] = '🔷'
+  array[23][5] = '🔷'
+  array[23][22] = '🔷'
+  array[23][23] = '🔷'
+  //line 24
+  array[24][1] = '🔷'
+  array[24][2] = '🔷'
+  array[24][4] = '🔷'
+  array[24][5] = '🔷'
+  array[24][7] = '🔷'
+  array[24][8] = '🔷'
+  array[24][10] = '🔷'
+  array[24][11] = '🔷'
+  array[24][12] = '🔷'
+  array[24][13] = '🔷'
+  array[24][14] = '🔷'
+  array[24][15] = '🔷'
+  array[24][16] = '🔷'
+  array[24][17] = '🔷'
+  array[24][19] = '🔷'
+  array[24][20] = '🔷'
+  array[24][22] = '🔷'
+  array[24][23] = '🔷'
+  array[24][25] = '🔷'
+  array[24][26] = '🔷'
+  //line 25
+  array[25][1] = '🔷'
+  array[25][2] = '🔷'
+  array[25][4] = '🔷'
+  array[25][5] = '🔷'
+  array[25][7] = '🔷'
+  array[25][8] = '🔷'
+  array[25][10] = '🔷'
+  array[25][11] = '🔷'
+  array[25][12] = '🔷'
+  array[25][13] = '🔷'
+  array[25][14] = '🔷'
+  array[25][15] = '🔷'
+  array[25][16] = '🔷'
+  array[25][17] = '🔷'
+  array[25][19] = '🔷'
+  array[25][20] = '🔷'
+  array[25][22] = '🔷'
+  array[25][23] = '🔷'
+  array[25][25] = '🔷'
+  array[25][26] = '🔷'
+  //line 26
+  array[26][7] = '🔷'
+  array[26][8] = '🔷'
+  array[26][13] = '🔷'
+  array[26][14] = '🔷'
+  array[26][19] = '🔷'
+  array[26][20] = '🔷'
+  //line 27
+  array[27][2] = '🔷'
+  array[27][3] = '🔷'
+  array[27][4] = '🔷'
+  array[27][5] = '🔷'
+  array[27][6] = '🔷'
+  array[27][7] = '🔷'
+  array[27][8] = '🔷'
+  array[27][9] = '🔷'
+  array[27][10] = '🔷'
+  array[27][11] = '🔷'
+  array[27][13] = '🔷'
+  array[27][14] = '🔷'
+  array[27][16] = '🔷'
+  array[27][17] = '🔷'
+  array[27][18] = '🔷'
+  array[27][19] = '🔷'
+  array[27][20] = '🔷'
+  array[27][21] = '🔷'
+  array[27][22] = '🔷'
+  array[27][23] = '🔷'
+  array[27][24] = '🔷'
+  array[27][25] = '🔷'
+  // line 28
+  array[28][2] = '🔷'
+  array[28][3] = '🔷'
+  array[28][4] = '🔷'
+  array[28][5] = '🔷'
+  array[28][6] = '🔷'
+  array[28][7] = '🔷'
+  array[28][8] = '🔷'
+  array[28][9] = '🔷'
+  array[28][10] = '🔷'
+  array[28][11] = '🔷'
+  array[28][13] = '🔷'
+  array[28][14] = '🔷'
+  array[28][16] = '🔷'
+  array[28][17] = '🔷'
+  array[28][18] = '🔷'
+  array[28][19] = '🔷'
+  array[28][20] = '🔷'
+  array[28][21] = '🔷'
+  array[28][22] = '🔷'
+  array[28][23] = '🔷'
+  array[28][24] = '🔷'
+  array[28][25] = '🔷'
+  array[1][1] = '😬'
   
 
 
@@ -360,7 +506,7 @@ arr = fillTiles(arr)
 // let score = scoreBoard (29);
 
 // arr.forEach(row => console.log(c.green.bgGreen.bold(row.join(" "))));
-
+let hs = 0
 let [row, col] = [1, 1];
 let move = 'd';
 // c.green.bgGreen.bold(row.join(' '))
@@ -370,7 +516,7 @@ while (true) {
   ////////render
   //scoreBoard test;
   // score.forEach(row => console.log(c.bgBlack.bold(row.join(" "))));
-  console.log (c.bgCyan.bold ('HIGHSCORE: ', row, col));
+  console.log (c.bgCyan.bold ('HIGHSCORE: ', hs));
   arr.forEach (row => console.log (c.bgBlack.bold (row.join (' '))));
   //input move
   move = readline.keyIn ('[w]up,[a]left, [s]down, [d]right', {limit: 'wasdp'});
@@ -380,6 +526,7 @@ while (true) {
   if (move === 'w') {
     // if (row - 1 >= 1) {
     if(arr[row-1][col] !== '🔷'){
+      if(arr[row-1][col] === '⚆') hs+=10
       arr[row][col] = ' ';
       row--;
       arr[row][col] = '😬';
@@ -387,12 +534,14 @@ while (true) {
   } else if (move === 'a') {
     // if (col - 1 >= 1) {
     if(arr[row][col-1] !== '🔷'){
+      if(arr[row][col-1] === '⚆') hs+=10
       arr[row][col] = ' ';
       col--;
       arr[row][col] = '😬';
     }
   } else if (move === 's') {
     if(arr[row+1][col] !== '🔷'){
+      if(arr[row+1][col] === '⚆') hs+=10
     // if (row + 1 < arr.length - 1) {
       arr[row][col] = ' ';
       row++;
@@ -400,6 +549,7 @@ while (true) {
     }
   } else if (move === 'd') {
     if(arr[row][col + 1] !== '🔷'){
+      if(arr[row][col+1] === '⚆') hs+=10
     // if (col + 1 < arr.length - 1) {
       arr[row][col] = ' ';
       col++;
