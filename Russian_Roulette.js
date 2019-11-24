@@ -20,8 +20,8 @@ let turn = random (1, 6);
 //     }
 
 // }
-let player1;
-let player2;
+let player1 = 'Jhenya'
+let player2 = "Jon"
 
 
 
