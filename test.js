@@ -36,7 +36,7 @@
 //       });
 // },1750)
     
-
+/////////////////////////////////######half working readline refresh########//////////
 const readline = require('readline');
 
 readline.emitKeypressEvents(process.stdin);
@@ -46,7 +46,7 @@ process.stdin.setRawMode(true);
 let count = 0;
 
 //So the plan is to 'render' normally while this function listens to te keypresses.
-
+setInterval(() => {
     //setting the amount of listeners to a high amount, this might cause problems later, but F it.yolo, right? kappa123
     require('events').EventEmitter.defaultMaxListeners = 10000
     process.stdin.on('keypress', (str, key) => {
@@ -55,21 +55,20 @@ let count = 0;
         if (key.ctrl && key.name === 'c') {
             process.exit();
         } else {
-            setInterval(() => {
-                console.log(`You pressed the "${str}" key`);
-                count++
-                console.log('this is count inside setInterval:', count)
-                console.log('this is key name',key.name);
-            }, 1000);
+          
+                // console.log(`You pressed the "${str}" key`);
+                // console.log('this is count inside setInterval:', count)
+                // console.log('this is key name',key.name);
                 
         }
         console.log('count inside stdin ',count);
-    }); 
-    console.log(`${count}`)
-
+    });
+    console.log(`${count++}`)
+}, 1000);  
     
 
 console.log('Press any key...');
+///////////#####??????////////////////////////////
 /////////////////////////////////////////////////
 // const EventEmitter = require('events');
 
