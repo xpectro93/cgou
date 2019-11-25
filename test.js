@@ -44,7 +44,7 @@ readline.emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
 // require('events').EventEmitter.prototype._maxListeners = 100;
 let count = 0;
-
+let input = {name:' '}
 //So the plan is to 'render' normally while this function listens to te keypresses.
 setInterval(() => {
     //setting the amount of listeners to a high amount, this might cause problems later, but F it.yolo, right? kappa123
@@ -55,15 +55,18 @@ setInterval(() => {
         if (key.ctrl && key.name === 'c') {
             process.exit();
         } else {
-          
-                // console.log(`You pressed the "${str}" key`);
-                // console.log('this is count inside setInterval:', count)
-                // console.log('this is key name',key.name);
+            //listens to input here, and redefines it.
+            input = key
+            // console.log(key)
+            // console.log(`You pressed the "${str}" key`);
+            // console.log('this is count inside setInterval:', count)
+            // console.log('this is key name',key.name);
                 
         }
-        console.log('count inside stdin ',count);
+        // console.log('count inside stdin ',count);
     });
-    console.log(`${count++}`)
+    //line where the magic happens
+    console.log(`${count++} ${input.name}`)
 }, 1000);  
     
 
