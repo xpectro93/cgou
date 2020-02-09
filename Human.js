@@ -561,44 +561,6 @@ while (true) {
 }
 // let count = 0
 
-// while(true){
-
-//     arr.forEach(row => console.log(row.join('🌱')))
-//     console.log(row,col)
-//     move = readline.keyIn('[w]up, [a]left, [s]down, [d]right', {limit: 'wasdc'})
-
-//    if(move==='w'){
-//      if(row - 1 >= 0){
-//             arr[row][col]=' '
-//             row--
-//             arr[row][col] = '😬'
-//      }
-//     }else if(move ==='a'){
-//        if(col - 1 >= 0){
-//             arr[row][col]=' '
-//             col--
-//             arr[row][col] = '😬'
-//        }
-//     }else if(move === 's'){
-//         if(row + 1 < arr.length){
-//             arr[row][col]=' '
-//             row++
-//             arr[row][col] = '😬'
-//         }
-//     }else if(move === 'd'){
-//         if(col + 1 < arr.length){
-//             arr[row][col]=' '
-//             col++
-//             arr[row][col] = '😬'
-//         }
-//     }
-
-//    console.clear()
-// }
-
-// console.log(c.green.bgGreen.bold())
-// Human.randomCreate(20)
-// console.log(Human.randomCreate(5))
 module.exports = Human;
 // '🧟'
 // '🧝'

@@ -1,9 +1,7 @@
 // const rl = require("readline-sync");
 // const c = require('chalk');
 // const log = console;
-
 // // log.log(c.blue.bgRed.bold('Hello world!'));
-
 // // let animals = ['Lion', 'Elephant', 'Crocodile', 'Giraffe', 'Hippo'],
 // //   index = rl.keyInSelect(animals, 'Which animal?');
 // // log.log('Ok, ' + animals[index] + ' goes to your room.');
@@ -14,7 +12,7 @@
 //     log.log(c.white.bgRed.bold(command))
 // }
 
-// // class Player {∏∏
+// // class Player {
 // //     constructor(name){
 
 // //     }
@@ -25,7 +23,7 @@
 // const rl = readline.createInterface({
 //   input: process.stdin,
 //   output: process.stdout
-// });
+// })
 
 // setInterval(()=> {
 //     rl.question('line', (answer) => {
@@ -38,7 +36,6 @@
     
 /////////////////////////////////######half working readline refresh########//////////
 const readline = require('readline');
-
 readline.emitKeypressEvents(process.stdin);
 
 process.stdin.setRawMode(true);
@@ -49,30 +46,23 @@ let input = {name:' '}
 setInterval(() => {
     //setting the amount of listeners to a high amount, this might cause problems later, but F it.yolo, right? kappa123
     require('events').EventEmitter.defaultMaxListeners = 10000
+    //str is 'str' and key is obj;
     process.stdin.on('keypress', (str, key) => {
-
-
         if (key.ctrl && key.name === 'c') {
             process.exit();
         } else {
-            //listens to input here, and redefines it.
+            //listens to input here, and redefines it. 
             input = key
-            // console.log(key)
-            // console.log(`You pressed the "${str}" key`);
-            // console.log('this is count inside setInterval:', count)
-            // console.log('this is key name',key.name);
-                
         }
-        // console.log('count inside stdin ',count);
+        console.log('count inside stdin ',count);
     });
     //line where the magic happens
     console.log(`${count++} ${input.name}`)
 }, 1000);  
-    
 
 console.log('Press any key...');
 ///////////#####??????////////////////////////////
-/////////////////////////////////////////////////
+
 // const EventEmitter = require('events');
 
 // class MyEmitter extends EventEmitter {}
@@ -81,16 +71,5 @@ console.log('Press any key...');
 // for(let i = 0; i < 11; i++) {
 //   myEmitter.on('event', _ => console.log(i));
 // }
-
 // myEmitter.emit('event');
-
-
-    
-      
-      
-
-
-
-
-
 
