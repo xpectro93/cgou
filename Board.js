@@ -456,17 +456,27 @@ class Board {
     this.grid[1][1] = '😬';
     return this.grid;
   }
+  //this is going to update board once valid a valid move is accepted
   updateBoard (playerCoords) {
-    let [row, col] = playerCoords;
-
-    this.grid[row][col] = '😬';
+    let [r, c] = playerCoords;
+    console.log(r,c)
+    let [row, col] = this.playerCoords;
+    this.grid[row][col] = " "
+    this.playerCoords = [row + r,col + c]
+    this.grid[row + r][col + c] = '😬';
+    this.showBoard();
   }
   showBoard () {
     this.grid.forEach (row => console.log (c.bgBlack.bold (row.join (' '))));
   }
+  //this should take in a letter
   makeMove (move) {
-
+    if(this.isValidMove(move)){
+      let playerMove = this.move(move);
+      this.updateBoard(playerMove);
+    }
   }
+  //this is going to be a letter (wasd) =>[coords]
   move (playerInput) {
     switch (playerInput) {
       case 'w':
@@ -481,6 +491,7 @@ class Board {
         return [0, 0];
     }
   }
+  //return if playerMove is valid => boolean
   isValidMove (move) {
     move = move.toLowerCase ();
     let validInput = ['w', 'a', 's', 'd'];
@@ -501,6 +512,4 @@ class Board {
 module.exports = Board;
 
 let newBoard = new Board ();
-newBoard.showBoard ();
-console.log(newBoard.isValidMove('s'));
-newBoard.showBoard ();
+
