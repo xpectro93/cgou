@@ -464,7 +464,9 @@ class Board {
   showBoard () {
     this.grid.forEach (row => console.log (c.bgBlack.bold (row.join (' '))));
   }
-  makeMove (move) {}
+  makeMove (move) {
+
+  }
   move (playerInput) {
     switch (playerInput) {
       case 'w':
@@ -472,7 +474,7 @@ class Board {
       case 'a':
         return [0, -1];
       case 's':
-        return [-1, 0];
+        return [1, 0];
       case 'd':
         return [0, 1];
       default:
@@ -483,10 +485,12 @@ class Board {
     move = move.toLowerCase ();
     let validInput = ['w', 'a', 's', 'd'];
     if (validInput.includes (move)) {
-      let [r, c] = move (move);
+      let [r, c] = this.move (move);
       let [row, col] = this.playerCoords;
       if (this.grid[row + r][col + c] !== '🔷') {
         return true;
+      }else{
+        return false;
       }
     } else {
       return false;
@@ -498,5 +502,5 @@ module.exports = Board;
 
 let newBoard = new Board ();
 newBoard.showBoard ();
-newBoard.updateBoard ([10, 10]);
+console.log(newBoard.isValidMove('s'));
 newBoard.showBoard ();
