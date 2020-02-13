@@ -3,6 +3,7 @@ class Board {
   constructor () {
     this.grid = this.createBoard (27);
     this.playerCoords = [1, 1];
+    this.score = 0;
   }
   createBoard (num) {
     let outline = [];
