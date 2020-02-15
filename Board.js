@@ -457,10 +457,10 @@ class Board {
     this.grid[1][1] = '😬';
     return this.grid;
   }
-  //this is going to update board once valid a valid move is accepted
+  //this is going to update board once valid a valid move is accepted, takes in an arr[]
   updateBoard (playerCoords) {
     let [r, c] = playerCoords;
-    console.log(r,c)
+    
     let [row, col] = this.playerCoords;
     this.grid[row][col] = " "
     this.playerCoords = [row + r,col + c]
@@ -494,9 +494,9 @@ class Board {
   }
   //return if playerMove is valid => boolean
   isValidMove (move) {
-    move = move.toLowerCase ();
     let validInput = ['w', 'a', 's', 'd'];
     if (validInput.includes (move)) {
+      move = move.toLowerCase ();
       let [r, c] = this.move (move);
       let [row, col] = this.playerCoords;
       if (this.grid[row + r][col + c] !== '🔷') {
@@ -512,5 +512,9 @@ class Board {
 
 module.exports = Board;
 
-let newBoard = new Board ();
+// let newBoard = new Board ();
+// newBoard.makeMove('d');
+// newBoard.makeMove('d');
+// newBoard.makeMove('d');
+// newBoard.makeMove('s');
 

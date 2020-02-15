@@ -1,19 +1,20 @@
 // const Human = require('Human.js');
 const c = require ('chalk');
 const readline = require('readline');
+const Board = require('./Board.js');
 readline.emitKeypressEvents(process.stdin);
 
 process.stdin.setRawMode(true);
 
 class Render {
-  constructor(refresh){
-    this.stage = this.map(27);
-    this.refresh = refresh;
+  constructor(refreshRate){
+    this.stage = new Board();
+    this.refreshRate = refreshRate;
   }
-
-  test(callback){
+  //this is a callback that takes in the user input
+  test(gamePlayLoop){
     // let [row, col] = [1 ,1]
-    let input = {name:null};
+    let input = {name:'d'};
     // let renderCount = 0;
     // let hs = 0;
     setInterval(() => {
@@ -29,8 +30,10 @@ class Render {
       })
       
       //add render logic here
-      callback()
-
+      //gameplay look executes once every render, or at least it should
+      
+      this.stage.makeMove(input.name)
+      
       // test render
       // console.log (input.name, renderCount++);
 
@@ -38,9 +41,11 @@ class Render {
 
 
 
-    },this.refresh)
+    },this.refreshRate)
+    console.clear()
   }
 }
-let newRender = new Render(1000)
-newRender.test()
+let newRender = new Render(1000);
+newRender.test();
+// newRender.test(newRender.stage.makeMove)
 // console.log(newRender)
