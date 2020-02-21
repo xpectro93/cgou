@@ -4,6 +4,7 @@ class Board {
     this.grid = this.createBoard (27);
     this.playerCoords = [1, 1];
     this.score = 0;
+    this.prevMove ='d'
   }
   createBoard (num) {
     let outline = [];
@@ -464,6 +465,12 @@ class Board {
     let [row, col] = this.playerCoords;
     this.grid[row][col] = " "
     this.playerCoords = [row + r,col + c]
+
+
+    if(this.grid[row + r][col + c] === '⚆'){
+      this.score+= 10;
+      console.log('score', this.score)
+    };
     this.grid[row + r][col + c] = '😬';
     this.showBoard();
   }
@@ -474,6 +481,7 @@ class Board {
   makeMove (move) {
     if(this.isValidMove(move)){
       let playerMove = this.move(move);
+      this.prevMove = move
       this.updateBoard(playerMove);
     }
   }

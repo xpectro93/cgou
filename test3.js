@@ -12,7 +12,7 @@ class Render {
     this.refreshRate = refreshRate;
   }
   //this is a callback that takes in the user input
-  test(gamePlayLoop){
+  test(){
     // let [row, col] = [1 ,1]
     let input = {name:'d'};
     // let renderCount = 0;
@@ -28,24 +28,17 @@ class Render {
           input = key
         }
       })
-      
       //add render logic here
       //gameplay look executes once every render, or at least it should
-      
       this.stage.makeMove(input.name)
-      
       // test render
       // console.log (input.name, renderCount++);
-
-
-
-
 
     },this.refreshRate)
     console.clear()
   }
 }
-let newRender = new Render(1000);
+let newRender = new Render(250);
 newRender.test();
 // newRender.test(newRender.stage.makeMove)
 // console.log(newRender)
